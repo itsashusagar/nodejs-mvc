@@ -1,0 +1,23 @@
+<!-- views/tasks/index.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+  <title>Task List</title>
+</head>
+<body>
+  <h1 style="text-align: center;">Task List</h1>
+  <ol style="text-align: center; text-decoration: none;">
+    <% tasks.forEach(task => { %>
+      <li><h1><%= task.title %></h1></li>
+    <% }); %>
+  </ol>
+  <form action="/tasks" method="post" style="text-align: center;">
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" required>
+    <label for="description">Description:</label>
+    <input type="text" id="description" name="description">
+    <button type="submit">Add Task</button>
+  </form>
+</body>
+</html>
